@@ -10,19 +10,22 @@ aliases = [
 
 +++
 
+![lab-logo](https://pslab-unibo.github.io/images/logo.png)
 
-# Short guide to Markdown slides
+# A brief introduction to my research activities
+
+## [Danilo Pianini](mailto:danilo.pianini@unibo.it), {{% today %}}
+
+---
+
+{{< slide background-image="https://danysk.github.io/slides-acsos-2026-cesena/geo/eu.svg" >}}
 
 ---
 
-# Headers
-
-# H1
-## H2
-### H3
-#### H4
+{{< slide background-image="map.svg" >}}
 
 ---
+
 
 # Text
 
