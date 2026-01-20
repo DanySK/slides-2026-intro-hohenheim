@@ -1,8 +1,8 @@
 
 +++
 
-title = "Guide for writing markdown slides"
-description = "A Hugo theme for creating Reveal.js presentations"
+title = "A brief introduction to my research activities"
+description = "A brief introduction to my research activities, to be presented at the University of Hohenheim, Jan 2026."
 outputs = ["Reveal"]
 aliases = [
     "/guide/"
@@ -18,6 +18,35 @@ aliases = [
 
 ---
 
+# Who am I?
+
+{{% multicol %}}{{% col %}}
+![propic](profile.jpg)
+
+(note: picture from 2014, I may look older now)
+{{% /col %}}{{% col %}}
+**Danilo Pianini**
+* Associate Professor @ University of Bologna
+* Department of Computer Science and Engineering (DISI), Cesena, Italy
+
+*Research:*
+* about 100 publications in peer-reviewed venues
+* Head of the [Pervasive Software Lab](https://pslab-unibo.github.io)
+ 
+*Institutional roles:*
+* Department Delegate for Open Science
+* FAIR Champion of UniBo
+
+*Teaching:*
+* Object-Oriented Programming (Bachelor)
+* Software Design and Development (Bachelor)
+* Software Process Engineering (Master)
+* Micro-macro Computational Models: Theory, Applications, and Emergent Properties (Collegio Superiore)
+
+{{% /col %}}{{% /multicol %}}
+
+---
+
 {{< slide background-image="https://danysk.github.io/slides-acsos-2026-cesena/geo/eu.svg" >}}
 
 ---
@@ -26,412 +55,243 @@ aliases = [
 
 ---
 
-
-# Text
-
-normal text
-
-`inline code`
-
-*italic*
-
-**bold**
-
-**_emphasized_**
-
-*__emphasized alternative__*
-
-~~strikethrough~~
-
-[link](http://www.google.com)
-
----
-
-# Lists and enums
-
-1. First ordered list item
-1. Another item
-    * Unordered sub-list.
-    * with two items
-        * another sublist
-            1. With a sub-enum
-            1. yay!
-1. Actual numbers don't matter, just that it's a number
-  1. Ordered sub-list
-1. And another item.
-
----
-
-# Inline images
-
-![Alternative text](https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg)
-
----
-
-## Fallback to shortcodes for resizing
-
-Autoresize specifying
-
-* `max-w` (percent of parent element width) and/or `max-h` (percent of viewport height) as max sizes , and
-* `width` and/or `height` as *exact* sizes (as percent of viewport size)
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" height="20">}}
-
----
-
-## Multi-column slide
+# Main research theme:
+# **Self-organizing pervasive systems**
 
 {{% multicol %}}{{% col %}}
-Column 1
+![city](city.png)
 {{% /col %}}{{% col %}}
-Column 2
+*Context:*
+* large-scale systems made of many heterogeneous devices
+* devices interact locally
+  * central coordination impossible, undesirable, or available only intermittently
+* global behavior emerges from local interactions
+    * classically, inspired by natural systems (e.g., social insects)
+* the system must be:
+  * robust to failures (including unknown unknowns)
+  * adaptive to changing environments
+  * scalable to large numbers of devices
+
+*Main open questions:*
+* how do we test/verify such systems?
+* how do we engineer emergence?
+* how do we deal with openness and unpredictability?
 {{% /col %}}{{% /multicol %}}
 
-{{% multicol %}}
-{{% col class="col-8" %}}
-Larger columns using bootstrap
-{{% /col %}}
-{{% col %}}
-[Link to bootstrap grid system](https://getbootstrap.com/docs/4.0/layout/grid/)
-{{% /col %}}
-{{% /multicol %}}
+---
+
+## Florida Institute of Technology - 2009 (master student)
+
+{{% multicol %}}{{% col %}}
+![florida](florida.png)
+{{% /col %}}{{% col %}}
+* First working period abroad
+* Agent-based approaches: design simple agents that interact locally to produce global behaviors
+* Ant-colony-inspired approach to move similar files closer together in a distributed storage system
+* Validated by run on multiple systems (nine PCs)
+* First publication: [Self Organization in Coordination Systems Using a WordNet-Based Ontology](https://doi.org/10.1109/SASO.2010.35), SASO 2010
+
+* <i class="fa-solid fa-question"></i> where is "large scale"?
+* <i class="fa-solid fa-question"></i> portability of the approach?
+  {{% /col %}}{{% /multicol %}}
+
+---
+
+## The Alchemist Simulator - 2011 (master thesis)
+
+{{% multicol %}}{{% col %}}
+![florida](https://alchemistsimulator.github.io/images/logo.svg)
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/N-DDVA04uJQ?si=_6RngQtW9q3xk1G-&autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{% /col %}}{{% col %}}
+* We need simulation to test in large scale
+* Agent-based, time-driven simulators scale to ~10² agents before becoming effectively unusable
+* *Idea*: pick a high-performance engine from stochastic chemistry, and extend the model to spatially distributed systems
+    * Risk: extensions destroy performance
+    * Result: not as fast as pure chemistry, but it can still simulate ~10³-10⁴ agents efficiently
+* First journal publication: [Chemical-oriented simulation of computational systems with ALCHEMIST](https://doi.org/10.1057/jos.2012.27)
+
+
+* <i class="fa-solid fa-question"></i> how to reflect changes in the environment within the digital world?
+* <i class="fa-solid fa-question"></i> how to simulate richer environments?
+  {{% /col %}}{{% /multicol %}}
+
+---
+
+## The SAPERE Project - 2012 (PhD student)
+
+{{% multicol %}}{{% col %}}
+![sapere](https://cordis.europa.eu/docs/projects/cnect/3/256873/080/publishing/logo1/sapere.jpg)
+
+![sapere](sapere.png)
+{{% /col %}}{{% col %}}
+* [SAPERE: Self-aware Pervasive Service Ecosystems](https://doi.org/10.1016/j.scico.2015.06.003)
+  * PI: Franco Zambonelli (Università di Modena e Reggio Emilia)
+  * EU FP7 project (2010-2013)
+* *Idea*:
+  * devices and network are reified as "live sematic annotations" (LSAs) in a shared space
+  * LSAs combine by means of "eco-laws" to produce emergent behaviors
+* Somewhat a predecessor of the "digital twin" concept
+
+* <i class="fa-solid fa-triangle-exclamation"></i>
+  Minimal changes to the desired algorithms require a *complete redesign* of the eco-laws
+  <i class="fa-solid fa-triangle-exclamation"></i>
+  * <i class="fa-solid fa-triangle-exclamation"></i>No modularity<i class="fa-solid fa-triangle-exclamation"></i>
+  * <i class="fa-solid fa-triangle-exclamation"></i>Limited reusability<i class="fa-solid fa-triangle-exclamation"></i>
+{{% /col %}}{{% /multicol %}}
 
 
 ---
 
-## Tick and Cross
+## The Alchemist Simulator pt. 2 - Johannes Kepler Universität, Linz, 2013 (PhD student)
 
-* {{% tick %}} This is something good
-* {{% cross %}} This is something bad
+{{% multicol %}}{{% col %}}
+<video loop="" playsinline="" autoplay="" muted="" style="max-width: 100%; display: inline-block; ">
+  <source src="https://alchemistsimulator.github.io/home-animation.mp4" type="video/mp4">
+  If your browser supported the video tag, there would be a nice video.
+</video>
+{{% /col %}}{{% col %}}
+* First doctoral period abroad
+* Alchemist became capable of simulating the SAPERE model and more:
+    * Biological systems (e.g., [A model for drosophila melanogaster development from a single cell to stripe pattern formation](https://doi.org/10.1145/2245276.2231999))
+    * Smart cities (e.g., [HPC from a self-organisation perspective: The case of crowd steering at the urban scale](https://doi.org/10.1109/HPCSim.2014.6903721))
+    * Execution on High-Performance Computing Clusters (e.g., [Distributed statistical analysis of complex systems modeled through a chemical metaphor](https://doi.org/10.1109/HPCSim.2014.6903715))
+* The simulator is ready for complex, large-scale experiments
 
----
-
-## Chart.js
-
-{{< chart >}}
-{
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: 'Bar Chart',
-            data: [12, 19, 18, 16, 13, 14],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-}
-{{< /chart >}}
-
----
-
-## FontAwesome
-
-<i class="fa-solid fa-mug-hot"></i>
-<i class="fa-solid fa-lemon"></i>
-<i class="fa-solid fa-flask"></i>
-<i class="fa-solid fa-apple-whole"></i>
-<i class="fa-solid fa-bacon"></i>
-<i class="fa-solid fa-beer-mug-empty"></i>
-<i class="fa-solid fa-pepper-hot"></i>
-
----
-
-## Bootstrap 1
-
-<div class="card w-100" >
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/View_of_Cesena_from_the_Abbey.jpg/1920px-View_of_Cesena_from_the_Abbey.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
----
-
-## Bootstrap 2
-
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
-
-<button type="button" class="btn btn-link">Link</button>
-
----
-
-## Low res, plain markdown
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg)
-
----
-
-## Hi res, plain markdown
-
-![](https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg)
-
----
-
-{{< slide background-image="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" >}}
-
-# Large images as background
-## (May affect printing)
-
----
-
-
-{{< slide background-video="https://github.com/DanySK/slides-2024-acsos-imageonomics/raw/master/content/nonnadir.mkv" background-video-loop="true" background-video-muted="true" background-opacity="0.95">}}
-
-# Video background
-
----
-
-# $$\LaTeX{}$$
-
-
-Inline equations like $E=mc^2$
-
-$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$
-
----
-
-# Code snippets
-
-
-```kotlin
-val x = pippo
-```
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Hello world!")
-}
-```
-
----
-
-# Tables
-
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
----
-
-# Quotes
-
-> Multiple
-> lines
-> of
-> a
-> single
-> quote
-> get
-> joined
-
-> Very long one liners of Markdown text automatically get broken into a multiline quotation, which is then rendered in the slides.
-
----
-
-# Fragments
-
-* {{< frag c="pluto" >}}
-* {{< frag c="pluto" >}}
-* {{< frag c="pluto" >}}
-
----
-
-# Stacking images with Fragments
-{{% multicol %}}
-{{% col %}}
-<p class="fragment" data-fragment-index="0">Pippo</p>
-<p class="fragment" data-fragment-index="1">Pluto</p>
-<p class="fragment" data-fragment-index="2">Paperino</p>
-{{%/ col %}}
-
-{{% col %}}
-<div class="r-stack">
-  <img
-    class="fragment current-visible"
-    data-fragment-index="0"
-    src="https://www.topolino.it/wp-content/uploads/2019/12/pippointera.png"
-    width="450"
-    height="300"
-  />
-  <img
-    class="fragment current-visible"
-    data-fragment-index="1"
-    src="https://www.topolino.it/wp-content/uploads/2019/12/plutointera.png"
-    width="300"
-    height="450"
-  />
-  <img
-    class="fragment current-visible"
-    data-fragment-index="2"
-    src="https://it.wikifur.com/w/images/thumb/6/6f/Donald_Duck.png/362px-Donald_Duck.png"
-    width="400"
-    height="400"
-  />
-</div>
-{{%/ col %}}
-
-{{%/ multicol %}}
+* The open question remains:
+  * <i class="fa-solid fa-question"></i>How do we design self-organizing software top down, modularly?
+{{% /col %}}{{% /multicol %}}
 
 
 ---
 
-# Graphs via Gravizo
+## Aggregate Computing - Raytheon BBN Tech., Cambridge, MA, USA, 2014 (PhD student)
 
-{{< gravizo "Example Gravizo graph" >}}
-  digraph G {
-    aize ="4,4";
-    main [shape=box];
-    main -> parse [weight=8];
-    parse -> execute;
-    main -> init [style=dotted];
-    main -> cleanup;
-    execute -> { make_string; printf}
-    init -> make_string;
-    edge [color=red];
-    main -> printf [style=bold,label="100 times"];
-    make_string [label="make a string"];
-    node [shape=box,style=filled,color=".7 .3 1.0"];
-    execute -> compare;
-  }
-{{< /gravizo >}}
+{{% multicol %}}{{% col %}}
+![aggregate](gpi.png)
+{{% /col %}}{{% col %}}
+* Amorphous computing ([Programming an Amorphous Computational Medium](https://doi.org/10.1007/11527800_10))
+  introduced the idea of programming millions of devices as a single computational unit,
+  and programming them via *global-to-local compilation*.
+* $\Rightarrow$ [MIT Proto](https://doi.org/10.1109/MIS.2006.29) implemented this idea,
+  but its semantics was [complex and formalized only ex- post](https://doi.org/10.1016/j.scico.2012.12.003).
+* $\Rightarrow$ The [Field Calculus](https://doi.org/10.1016/j.scico.2015.11.005) was a simplified formal model
+  designed to capture the essence of such systems.
+* $\Rightarrow$ From the Field Calculus, we designed [Protelis](https://doi.org/10.1145/2695664.2695913),
+  the first Higher-Order, practical aggregate programming language.
+* $\Rightarrow$ From Protelis, we derived the [Higher Order Field Calculus (HOFC)](https://doi.org/10.1145/3285956).
+* $\Rightarrow$ The HOFC became the theoretical foundation of [Aggregate Computing](https://doi.org/10.1109/MC.2015.261).
+{{% /col %}}{{% /multicol %}}
 
 ---
 
-# Graphs via mermaid.js
+## Aggregate Computing in a nutshell
 
-```mermaid
-classDiagram
-  Class01 <|-- AveryLongClass : Coosssl
-  Class03 *-- Class04
-  Class05 o-- Class06
-  Class07 .. Class08
-  Class09 --> C2 : Where am i?
-  Class09 --* C3
-  Class09 --|> Class07
-  Class07 : equals()
-  Class07 : Object[] elementData
-  Class01 : size()
-  Class01 : int chimp
-  Class01 : int gorillasaaaaaaaaaaaaaaaaaaaaaa
-  Class08 <--> C2: Cool label
-```
-
----
-
-
-# Graphs via mermaid.js with options
-
-```mermaid
-%%{init: {'theme':'default', 'themeVariables': { 'fontSize': '.34em', 'fontFamily': 'verdana' }}}%%
-classDiagram
-  Class01 <|-- AveryLongClass : Coosssl
-  Class03 *-- Class04
-  Class05 o-- Class06
-  Class07 .. Class08
-  Class09 --> C2 : Where am i?
-  Class09 --* C3
-  Class09 --|> Class07
-  Class07 : equals()
-  Class07 : Object[] elementData
-  Class01 : size()
-  Class01 : int chimp
-  Class01 : int gorillasaaaaaaaaaaaaaaaaaaaaaa
-  Class08 <--> C2: Cool label
-```
-
-
----
-# Graphs via mermaid.js 2
-
-```mermaid
-graph TD
-  SL([fa:fa-user second level]) --> L[solution]
-  L -- solution email --> db[(mysql)]
-  db --> X[automatic]
-  X --> CM([fa:fa-users first level])
-  db -- Email --> c([customer support]);
-```
+{{% multicol %}}{{% col %}}
+![aggregate](ac.png)
+{{% /col %}}{{% col %}}
+* Compute by means of **computational fields**:
+  * A computational field is a *mapping from devices to values*
+  * Computational fields can be combined, transformed, and manipulated as first-class values
+* The perception is that of a **single computational device** operating on fields
+  * Each device runs the same program
+  * Each device can sense the surrounding values of fields
+  * Each device contributes its own value to the fields
+* *Round based* execution model, each device repeatedly:
+    1. gathers neighbor values and senses local context
+    2. computes the program
+    3. shares the result with neighbors
+* **(functional) Language-based approach**:
+  * The programmer writes programs in a dedicated language (e.g., Protelis)
+  * Programs are compiled to local code for each device
+  * The distributed execution produces the desired global behavior
+  * *Reuse and modularity are built-in!*
+      * a library of *proven self-stabilizing building blocks* is available
+      * *composition* of building blocks is *guaranteed to preserve self-stabilization*
+{{% /col %}}{{% /multicol %}}
 
 ---
 
-# Graphs via mermaid.js 3
+## Research directions
 
-```mermaid
-gitGraph
-  commit id: "Initialize project"
-  commit id: "Make some changes"
-  branch develop
-  checkout develop
-  commit
-  commit
-  checkout main
-  merge develop
-  commit
-  commit
-```
+Aggregate Computing opened many research directions:
+
+{{% multicol %}}{{% col %}}
+<video loop="" playsinline="" autoplay="" muted="" style="max-width: 100%; display: inline-block; ">
+  <source src="Emerge.mp4" type="video/mp4">
+  If your browser supported the video tag, there would be a nice video.
+</video>
+{{% /col %}}{{% col %}}
+
+* Swarm Robotics
+  * [A Demonstrator for Self-organizing Robot Teams](https://doi.org/10.1007/978-3-031-95589-1_12)
+  * [MacroSwarm: A scala framework for swarm programming](https://doi.org/10.1016/j.scico.2024.103182)
+  * [A Field-Based Approach for Runtime Replanning in Swarm Robotics Missions](https://doi.org/10.1109/ACSOS66086.2025.00017)
+* Communication in navigation systems
+    * [Robust Communication Through Collective Adaptive Relay Schemes for Maritime Vessels](https://doi.org/10.1109/ACSOS66086.2025.00019)
+* Federated Learning
+  * [Decentralized proximity-aware clustering for collective self-federated learning](https://doi.org/10.1016/j.iot.2025.101841)
+* "Pulverization" of deployed components
+  * [Scalability through Pulverisation: Declarative deployment reconfiguration at runtime](https://doi.org/10.1016/j.future.2024.07.042)
+  * [Dynamic IoT deployment reconfiguration: A global-level self-organisation approach](https://doi.org/10.1016/j.iot.2024.101412)
+* Bio-inspired construction
+    * [An Aggregate Vascular Morphogenesis Controller for Engineered Self-Organising Spatial Structures](https://doi.org/10.1109/ACSOS61780.2024.00032)
+* Multi-drone tracking
+  * [Decentralized Multi-Drone Coordination for Wildlife Video Acquisition](https://doi.org/10.1109/ACSOS61780.2024.00021)
+{{% /col %}}{{% /multicol %}}
 
 ---
 
-# Keystrokes
+## Other relevant activities
 
-<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd>
+{{% multicol %}}{{% col %}}
+### Technology transfer: Project **Wood4.0** - Partner: SCM Group
+* Automated, self-healing update system for large-scale wood processing manufacturing machines
+  * (patent pending)
+
+<img src="sezionatrice_gabbiani.png" style="width:400px;"/>
+<img src="output-yoda-cdl.png" style="width:150px;"/>
+<img src="gabbiani1.png" style="width:350px;"/>
+
+{{% /col %}}{{% col %}}
+### Advanced Tooling
+
+<img src="https://raw.githubusercontent.com/Collektive/collektive/refs/heads/master/site/static/img/collektive-logo-white-no-background.svg" style="width:150px;"/><br>
+
+**Collektive**: Aggregate Programming in pure Kotlin
+
+<img src="https://pslab-unibo.github.io/images/projects/jakta.png" style="width:150px;"/><br>
+
+**JaKtA**: type-safe Belief-Desire-Intention agent-oriented programming
+
+<img src="https://pslab-unibo.github.io/images/projects/project-emerge.png" style="width:150px;"/><br>
+
+**Emerge**: affordable swarm robotics
+{{% /col %}}{{% /multicol %}}
 
 ---
 
-# QR code
+## People (alphabetical order by column)
 
-{{% qrcode data="https://www.google.com" %}}
+|                                                                                               |                                                                                                |                                                                                             |                                                                                             |                                                                                             |
+|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| <img src="https://pslab-unibo.github.io/images/team/gianluca.jpeg" style="width:180px;"/><br> | <img src="https://pslab-unibo.github.io/images/team/martina.jpg" style="width:180px;"/><br>    | <img src="https://pslab-unibo.github.io/images/team/samuele.jpg" style="width:180px;"/><br> | <img src="https://pslab-unibo.github.io/images/team/roberto.png" style="width:180px;"/><br> | <img src="https://pslab-unibo.github.io/images/team/gciatto.jpg" style="width:180px;"/><br> |
+| Gianluca Aguzzi <br> Post-Doc Researcher                                                      | Martina Baiardi <br> PhD Student                                                               | Samuele Burattini <br> Post-Doc Researcher                                                  | Roberto Casadei <br> Tenure-Track Researcher                                                | Giovanni Ciatto <br> Tenure-Track Researcher                                                |
+| <img src="https://pslab-unibo.github.io/images/team/angela.png" style="width:180px;"/><br>    | <img src="https://pslab-unibo.github.io/images/team/davide.jpeg" style="width:180px;"/><br>    | <img src="https://pslab-unibo.github.io/images/team/nicolas.jpg" style="width:180px;"/><br> | <img src="https://pslab-unibo.github.io/images/team/ao.jpg" style="width:180px;"/><br>      | <img src="https://pslab-unibo.github.io/images/team/danilo.jpg" style="width:180px;"/><br>  |
+| Angela Cortecchia <br> PhD Student                                                            | Davide Domini <br> Phd Student                                                                 | Nicolas Farabegoli <br> Phd Student                                                         | Andrea Omicini <br> Full professor                                                          | Danilo Pianini <br> Associate Professor                                                     |
+|                                                                                               | <img src="https://pslab-unibo.github.io/images/team/alessandro.png" style="width:180px;"/><br> | <img src="https://pslab-unibo.github.io/images/team/mirko.png" style="width:180px;"/><br>   |                                                                                             |                                                                                             |                                                                                             
+|                                                                                               | Alessandro Ricci  <br> Associate Professor                                                     | Mirko Viroli  <br> Full professor                                                           |                                                                                             |                                                                                             |                                                                                             
 
 ---
 
-# Import shared slides
+# Collaborations
 
-<!-- write-here "shared-slides/devops/devops-intro.md" -->
-<!-- end-write -->
+* Joint research activity
+  * Let's start small, and see if it grows!
+* PhD students exchanges
+* Master students internships / theses abroad?
+
+## <img src="https://2026.acsos.org/getImage/orig/acsos-2026-blue.jpg" style="width:50px;"/> ACSOS 2026: shameless plug <img src="https://2026.acsos.org/getImage/orig/acsos-2026-blue.jpg" style="width:50px;"/>
+
+$\Rightarrow$ Cesena is hosting the 2026 edition of the **IEEE International Conference on Autonomic and Self-Organizing Systems** (ACSOS)
+* A great chance to meet and discuss!
